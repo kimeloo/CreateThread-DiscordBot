@@ -1,5 +1,7 @@
 import os
 from dotenv import load_dotenv, find_dotenv
+import logging
+logger = logging.getLogger("config")
 
 class Config():
     def __init__(self):
@@ -11,7 +13,7 @@ class Config():
     
     @token.setter
     def token(self, token):
-        print("Do not override TOKEN!")
+        logger.warning("Do not override TOKEN")
     
     def __check_token(self):
         dotenv_file = find_dotenv()
