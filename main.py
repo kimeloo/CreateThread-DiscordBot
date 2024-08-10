@@ -17,6 +17,6 @@ logger.info("")
 logger.info("Running main.py")
 logger.info("")
 
+# load bot token
 from discord_automation import config
-TOKEN = config.Config().token
-config.Config().token = 0
+config.Config()
