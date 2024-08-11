@@ -18,11 +18,11 @@ logger.info("Running main.py")
 logger.info("")
 
 # load bot token
-from discord_automation import config
+from app import config
 config.Config()
 
 # run bot
-from discord_automation import bot
+from app import bot
 bot_ = bot.ThreadBot()
 bot_.run()
 
