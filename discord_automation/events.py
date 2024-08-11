@@ -16,17 +16,6 @@ class Events():
         @bot.event
         async def on_ready():
             logger.info(f'Logged in as {bot.user.name}')
-        
-        # @bot.event
-        # async def on_raw_reaction_add(reaction):
-        #     logger.info(reaction.message.content)
-        #     logger.debug(reaction.message.content)
-        #     logger.debug(reaction.message.channel.parent)
-        #     if (reaction.message.channel.name == 'idea') or (reaction.message.channel.parent.name == 'idea'):
-        #         discussion_channel = bot.get_channel(int(self.__CHANNEL_ID_discussion))
-        #         logger.debug(f'Get Channel by ID {self.__CHANNEL_ID_discussion}')
-        #         new_message = await discussion_channel.send(reaction.message.content)
-        #         await new_message.create_thread(name=reaction.message.content)
 
         @bot.event
         async def on_raw_reaction_add(payload):

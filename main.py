@@ -1,7 +1,7 @@
 # Set Logger
 import logging
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 log_formatter = logging.Formatter("[%(asctime)s] [%(levelname)8s] : [%(name)15s] --- %(message)s")
 log_handler = logging.StreamHandler()
 log_handler.setFormatter(log_formatter)
