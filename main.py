@@ -12,17 +12,5 @@ log_warning_handler.setFormatter(log_warning_formatter)
 logger.addHandler(log_handler)
 logger.addHandler(log_warning_handler)
 
-# Start Log
-logger.info("")
-logger.info("Running main.py")
-logger.info("")
-
-# load bot token
-from app import config
-config.Config()
-
-# run bot
-from app import bot
-bot_ = bot.ThreadBot()
-bot_.run()
-
+from apps import manage
+manage.run()
