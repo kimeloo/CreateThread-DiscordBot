@@ -13,4 +13,5 @@ logger.addHandler(log_handler)
 logger.addHandler(log_warning_handler)
 
 from apps import manage
-manage.run()
+bot_mgr = manage.RunBot()
+bot_mgr.run()

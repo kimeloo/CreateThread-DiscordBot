@@ -4,7 +4,8 @@ import logging
 logger = logging.getLogger("config")
 
 class Config():
-    def __init__(self):
+    def __init__(self, name):
+        self.token_name = name
         self.__load_env()
         logger.info(".env loaded.")
     
@@ -18,21 +19,21 @@ class Config():
         if dotenv_file:
             load_dotenv(dotenv_file)
             try:
-                os.environ['DISCORD_BOT_TOKEN']
-                os.environ['CHANNEL_DISCUSSION']
+                os.environ[self.token_name]
                 return
             except KeyError:
-                logger.debug(".env - DISCORD_BOT_TOKEN not found.")
+                logger.debug(".env - {} not found.".format(self.token_name))
         logger.debug("generating .env file.")
         self.__gen_dotenv()
     
     def __gen_dotenv(self):
         logger.warning("Cannot find your token or .env file !")
         logger.info("Making your .env file...")
-        TOKEN = input("Paste your Discord Bot Token >> ")
-        CHANNEL_DISCUSSION = input("Paste your Discussion Channel ID >> ")
+        TOKEN = input("Paste your {} (If you don't have any, just press enter) >> ".format(self.token_name))
+        if not TOKEN:
+            pass
         with open('./.env', 'a') as envFile:
-            envFile.write(f'\n# This file contains your secret!!\n# Be careful when you share this project.\n\nDISCORD_BOT_TOKEN = {TOKEN}\nCHANNEL_DISCUSSION = {CHANNEL_DISCUSSION}')
+            envFile.write(f'\n{self.token_name} = {TOKEN}')
         logger.info("Token saved in .env file !")
         logger.info("Be careful when you share this project.")
 
