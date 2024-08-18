@@ -1,5 +1,9 @@
-### Seperated Apps ###
-/apps/thread/
+### Ignore Seperated Apps ###
+/apps/
+# Include apps/bot, setting files
+!/apps/bot/**/*
+!/apps/manage.py
+!/apps/config.py
 
 ### Manually Added ###
 Dockerfile
