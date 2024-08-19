@@ -34,7 +34,7 @@ class RunBot():
             bot.run(bot_token)
             return True
         else:
-            logger.error("Token not found.")
+            logger.error("Bot Token not found.")
             return False
 
 class ManageApps():

@@ -1,13 +1,13 @@
 import os
 from dotenv import load_dotenv, find_dotenv
 import logging
-logger = logging.getLogger("config")
+logger = logging.getLogger(__name__)
 
 class Config():
     def __init__(self, name):
         self.token_name = name
         self.__load_env()
-        logger.info(".env loaded.")
+        logger.info(".env loaded for {}".format(name))
     
     def __check_env(self):
         dotenv_file = find_dotenv()

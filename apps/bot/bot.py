@@ -1,9 +1,7 @@
 import discord
 from discord.ext import commands as discord_commands
-from ..thread.commands import Commands as mycommands
-from ..thread.events import Events as myevents
 import logging
-logger = logging.getLogger("bot")
+logger = logging.getLogger(__name__)
 
 class Bot():
     def __init__(self):
