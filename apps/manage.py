@@ -51,10 +51,10 @@ class ManageApps():
         for app in apps:
             try:
                 module = importlib.import_module('.main', package='apps.'+app)
+                locals()[app] = module
+                loaded[app] = module
             except ImportError as e:
                 logger.warning('Module Not Found : {}'.format(e.args[0]))
-            locals()[app] = module
-            loaded[app] = module
         return loaded
 
     def append_apps(self, apps):
