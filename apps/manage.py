@@ -40,7 +40,7 @@ class RunBot():
 class ManageApps():
     def __init__(self, bot):
         self.bot = bot
-        self.apps = ['Thread',]
+        self.apps = ['Thread','BlogGen',]
     
     def run(self):
         loaded = self.load_apps(self.apps)
