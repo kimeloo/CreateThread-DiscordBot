@@ -36,6 +36,7 @@ class Config():
             envFile.write(f'\n{self.token_name} = {TOKEN}')
         logger.info("Token saved in .env file !")
         logger.info("Be careful when you share this project.")
+        self.__load_env()
 
 if __name__ == '__main__':
     logger.warning("Do not run this file directly.")
